@@ -1,7 +1,7 @@
 
 Product.destroy_all
 50.times do |index|
-  product = Product.create!(name: Faker::Food.unique.ingredient, cost: Faker::Number.normal(15, 5).round(2), country_of_origin: Faker::Address.country)
+  product = Product.create!(name: Faker::Food.unique.ingredient, cost: Faker::Number.normal(15, 5).round(2), state_of_origin: Faker::Address.state)
   product.update_attributes(created_at: Faker::Date.between(1.year.ago, Date.today))
 end
 
