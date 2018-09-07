@@ -1,5 +1,5 @@
 class AddProductsIdToReviews < ActiveRecord::Migration[5.2]
   def change
-    add_reference :reviews, :product
+    add_column :reviews, :product_id, :integer
   end
 end

@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 2018_09_07_172700) do
     t.integer "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.bigint "product_id"
-    t.index ["product_id"], name: "index_reviews_on_product_id"
+    t.integer "product_id"
   end
 
 end
