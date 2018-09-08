@@ -1,0 +1,15 @@
+<h1>Products</h1>
+
+<h2>Add a Product</h2>
+<%= render "form" %>
+
+<h2>All Products</h2>
+<% @all_products.each do |product| %>
+<a href="/products/<%= product.id %>"><div>
+  <h3><%= product.name %></h3>
+  Cost: <%= product.cost %>
+  <br>
+  From: <%= product.state_of_origin %>
+  <br>
+</div></a>
+<% end %>
