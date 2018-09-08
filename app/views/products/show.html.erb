@@ -11,6 +11,10 @@ From: <%= @product.state_of_origin %>
 </button>
 
 <h2>Reviews</h2>
+
+<h3>Write a Review</h3>
+<%= render "reviews/form" %>
+
 <ul>
   <% @product.reviews.each do |review| %>
     <li>
