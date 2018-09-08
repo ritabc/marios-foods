@@ -1,11 +1,19 @@
 class ProductsController < ApplicationController
-  # def index
-  #   @most_recent_products = Product.three_most_recent
-  #   @most_reviewed_product = Product.most_reviews[0]
-  # end
 
-  def products
+  def index
+    @product = Product.new
     @all_products = Product.all
-    render 'products'
+    render 'index'
+  end
+
+  def create
+    @product = Product.new(product_params)
+    @product.save
+    redirect_to 'index'
+  end
+
+  private
+  def product_params
+    params.require(:product).permit(:name, :cost, :state_of_origin)
   end
 end
