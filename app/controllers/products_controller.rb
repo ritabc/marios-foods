@@ -8,8 +8,13 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.save
-    redirect_to 'index'
+    if @product.save
+      flash[:notice] = "Product successfully added!"
+      redirect_to product_path(@product)
+    else
+      flash[:alert] = "Product was not added. Please enter values for each field"
+      redirect_to products_path
+    end
   end
 
   private
