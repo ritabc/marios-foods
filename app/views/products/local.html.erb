@@ -1,0 +1,11 @@
+<h2>Products from the Pacific Northwest</h2>
+
+<% @local_products.each do |product| %>
+<a href="/products/<%= product.id %>"><div>
+  <h3><%= product.name %></h3>
+  Cost: <%= product.cost %>
+  <br>
+  From: <%= product.state_of_origin %>
+  <br>
+</div></a>
+<% end %>

@@ -41,6 +41,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def local
+    @local_products = Product.from_the_pnw
+
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :cost, :state_of_origin)
